@@ -10,38 +10,51 @@ title.style.backgroundColor = "#f0f0f0";
 title.style = "10px";
 text.style.fontSize = "18px";
 text.style.fontStyle = "italic";
-text.style.color = "darkgreen"
+text.style.color = "darkgreen";
 
 const btn = document.getElementById("btn");
-btn.addEventListener("click", () =>{
-    alert("Кнопка нажата!");
-    btn.style.backgroundColor = "#4CAF50";
-    btn.style.color = "white";
-})
+btn.addEventListener("click", () => {
+  alert("Кнопка нажата!");
+  btn.style.backgroundColor = "#4CAF50";
+  btn.style.color = "white";
+});
 
 const input = document.getElementById("nameInput");
 const button = document.getElementById("showName");
 const output = document.getElementById("output");
 button.addEventListener("click", () => {
-    if (input.value.trim() !== "") {
-        output.textContent = `Привет, ${input.value}!`;
-        output.style.color = "green";
-    }
+  if (input.value.trim() !== "") {
+    output.textContent = `Привет, ${input.value}!`;
+    output.style.color = "green";
+  }
 });
 
-button.addEventListener("click", () =>{
-    if (input.value.trim() !== "") {  
-    } else {
-        output.textContent = "Пожалуйста, введите имя!";
-        output.style.color = "red";
-    }
+button.addEventListener("click", () => {
+  if (input.value.trim() !== "") {
+  } else {
+    output.textContent = "Пожалуйста, введите имя!";
+    output.style.color = "red";
+  }
 });
 
 const clearButton = document.getElementById("clearButton");
-clearButton.addEventListener("click" , () => {
-    input.value = "";
-    output.textContent = "";
+clearButton.addEventListener("click", () => {
+  input.value = "";
+  output.textContent = "";
 });
 
 output.style.color = "";
 input.focus();
+
+const form = document.getElementById("userForm");
+const usernameInput = document.getElementById("username");
+const ageInput = document.getElementById("age");
+const result = document.getElementById("formResult");
+
+form.addEventListener("submit", (event) =>{
+    event.preventDefault();
+    const name = usernameInput.value;
+    const age = ageInput.value;
+    result.textContent = `Имя: ${name}, Возраст: ${age}`;
+});
+
